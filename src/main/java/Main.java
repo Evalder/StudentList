@@ -9,8 +9,15 @@ public class Main {
 		/* Создание коллекции для объектов класса Student */
 		ArrayList<Student> studList = new ArrayList<Student>();
 		
+		/* Создание экземпляра класса Student */
+		Student stud = new Student();
+		stud = new Student("Иван", "Петров", 20);
+		studList.add(stud);
+		stud = new Student("Семён", "Никитин", 22);
+		studList.add(stud);
+		
 		do {
-			System.out.println("\nВыберите действие: \n1 - Добавить студента. \n2 - Показать всех студентов. \n3 - Определить min, max и avg возраст. \n4 - Выйти из программы.");
+			System.out.println("\nВыберите действие: \n1 - Добавить студента. \n2 - Показать всех студентов. \n3 - Определить min, max и avg возраст. \n4 - Сгенерировать тестовые данные по студентам. \n5 - Выйти из программы.");
 			userInput = Methods.UserInputScanner();
 			
 			switch (userInput) {
@@ -24,7 +31,7 @@ public class Main {
 					age = Methods.IntScanner();
 					
 					/* Создание экземпляра класса Student */
-					Student stud = new Student(firstName, secondName, age);
+					stud = new Student(firstName, secondName, age);
 					
 					/* Наполнение коллекции данными студентов с переменной типа Student */
 					studList.add(stud);
@@ -45,7 +52,15 @@ public class Main {
 					/* Определеие min, max, avg возраста */
 					Methods.AgeActions(studList);
 					break;
-				case 4:
+				case 4:	
+					/* Генерация тестовых данных */
+					/* Создание экземпляра класса Student */
+					stud = new Student("Егор", "Михайлов", 20);
+					studList.add(stud);
+					stud = new Student("Антон", "Артёмов", 22);
+					studList.add(stud);
+					break;
+				case 5:
 					/* Закрыть программу */
 					System.exit(0);
 					

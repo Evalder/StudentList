@@ -44,14 +44,14 @@ public class Methods {
 		int Z;
 		do {
 			Z = Scan.nextInt();
-				if ((Z < 1) || (Z > 4)) {
-				System.out.println("Неверное значение, введите 1, 2, 3, 4");
+				if ((Z < 1) || (Z > 5)) {
+				System.out.println("Неверное значение, введите 1, 2, 3, 4, 5");
 				}	
 	    } while ((Z < 1) || (Z > 4));
 		return(Z);
 		}
 	
-	/* Метод для определения min, max, avg возраста */
+	/* Метод для определения min, max возраста */
 	public static void AgeActions(ArrayList<Student> studList) {
 		int min = 0, max = 0, avg = 0;
 		if (studList.size() < 1) {
@@ -75,7 +75,22 @@ public class Methods {
 			avg += studList.get(i).age;		/* Добавляет значение к самой переменной */
 			}
 		avg /= studList.size();				/* Делим значение переменной */
-		System.out.println("Минимальный возраст: " + min + "\nМаксимальный возраст: " + max + "\nСредний возраст: " + avg);
+		System.out.println("Минимальный возраст: " + min + "\nМаксимальный возраст: " + max);
+		}
+	
+	/* Метод для определения avg возраста */
+	public static int avgAge(ArrayList<Student> studList) {
+		int avg = 0;
+		if (studList.size() < 1) {
+			System.out.println("Отсутствуют данные по студентам");
+			return 0;
+		}
+		avg = studList.get(0).age;
+		for (int i = 1; i < studList.size(); i++) {
+			avg += studList.get(i).age;		/* Добавляет значение к самой переменной */
+			}
+		avg /= studList.size();				/* Делим значение переменной */
+		return avg;
 		}
 
 }

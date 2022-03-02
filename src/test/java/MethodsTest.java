@@ -39,6 +39,7 @@ public class MethodsTest {
 		assertNotEquals(expectedAge, actualsAge);
 	}	
 
+	
 	/* Проверка возраста студента, с отрицательным значением */
 	@Test
 	@Tag("negative")
