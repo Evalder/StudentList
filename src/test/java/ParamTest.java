@@ -52,7 +52,7 @@ class ParamTest {
 		assertNotNull(s.getFirstName());
 	}
 	
-	/* Параметризированный тест из списка аргументов для среднего значения */
+	/* Параметризированный тест из списка аргументов для среднего значения возраста */
 	@ParameterizedTest
 	@Tag("positive")
 	@CsvSource (value = {
