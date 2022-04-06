@@ -46,4 +46,18 @@ public void testStudentsDataCollection() {
 	AssertJUnit.assertEquals(k+1,arr.size());
 }
 
+/* Test array with student's data is not empty */
+@Test(priority = 2, groups = {"TestCollection"}, dependsOnMethods = {"testStudentsDataCollection"})
+public void testIsNotEmptyCollection() {
+	AssertJUnit.assertFalse(arr.isEmpty());
+}
+
+/* Test array nullpointer exception */
+@Test(priority = 0, groups = {"TestCollection"}, expectedExceptions = {NullPointerException.class})
+public void testNullPointerCollection() {
+	arr = null;
+	int size = arr.size();
+}
+
+
 }

@@ -3,15 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestNG1">
+      <class name="ParamTestNG">
         <methods>
-          <include name="testNames" invocation-numbers="0 1 2"/>
-          <include name="testIsNotEmptyCollection"/>
-          <include name="setUp"/>
-          <include name="teamDown"/>
           <include name="testStudentsDataCollection"/>
+          <include name="setUp"/>
+          <include name="testIsNotEmptyCollection"/>
         </methods>
-      </class> <!-- TestNG1 -->
+      </class> <!-- ParamTestNG -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
