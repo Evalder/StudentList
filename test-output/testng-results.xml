@@ -2,42 +2,42 @@
 <testng-results skipped="1" failed="1" ignored="0" total="6" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="37" started-at="2022-04-06T18:17:26 KRAT" finished-at="2022-04-06T18:17:26 KRAT">
+  <suite name="Default suite" duration-ms="39" started-at="2022-04-06T18:47:24 KRAT" finished-at="2022-04-06T18:47:24 KRAT">
     <groups>
       <group name="SimpleTest">
-        <method signature="ParamTestNG.testAge1()[pri:0, instance:ParamTestNG@7ce6a65d]" name="testAge1" class="ParamTestNG"/>
-        <method signature="ParamTestNG.testAge2()[pri:0, instance:ParamTestNG@7ce6a65d]" name="testAge2" class="ParamTestNG"/>
+        <method signature="ParamTestNG.testAge1()[pri:0, instance:ParamTestNG@1500955a]" name="testAge1" class="ParamTestNG"/>
+        <method signature="ParamTestNG.testAge2()[pri:0, instance:ParamTestNG@1500955a]" name="testAge2" class="ParamTestNG"/>
       </group> <!-- SimpleTest -->
       <group name="TestCollection">
-        <method signature="ParamTestNG.testStudentsDataCollection()[pri:1, instance:ParamTestNG@7ce6a65d]" name="testStudentsDataCollection" class="ParamTestNG"/>
-        <method signature="ParamTestNG.testIsNotEmptyCollection()[pri:2, instance:ParamTestNG@7ce6a65d]" name="testIsNotEmptyCollection" class="ParamTestNG"/>
-        <method signature="ParamTestNG.testEmptyCollection()[pri:0, instance:ParamTestNG@7ce6a65d]" name="testEmptyCollection" class="ParamTestNG"/>
-        <method signature="ParamTestNG.testNullPointerCollection()[pri:0, instance:ParamTestNG@7ce6a65d]" name="testNullPointerCollection" class="ParamTestNG"/>
+        <method signature="ParamTestNG.testStudentsDataCollection()[pri:1, instance:ParamTestNG@1500955a]" name="testStudentsDataCollection" class="ParamTestNG"/>
+        <method signature="ParamTestNG.testIsNotEmptyCollection()[pri:2, instance:ParamTestNG@1500955a]" name="testIsNotEmptyCollection" class="ParamTestNG"/>
+        <method signature="ParamTestNG.testEmptyCollection()[pri:0, instance:ParamTestNG@1500955a]" name="testEmptyCollection" class="ParamTestNG"/>
+        <method signature="ParamTestNG.testNullPointerCollection()[pri:0, instance:ParamTestNG@1500955a]" name="testNullPointerCollection" class="ParamTestNG"/>
       </group> <!-- TestCollection -->
     </groups>
-    <test name="Default test" duration-ms="37" started-at="2022-04-06T18:17:26 KRAT" finished-at="2022-04-06T18:17:26 KRAT">
+    <test name="Default test" duration-ms="39" started-at="2022-04-06T18:47:24 KRAT" finished-at="2022-04-06T18:47:24 KRAT">
       <class name="ParamTestNG">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:ParamTestNG@7ce6a65d]" name="setUp" is-config="true" duration-ms="5" started-at="2022-04-06T18:17:26 KRAT" finished-at="2022-04-06T18:17:26 KRAT">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:ParamTestNG@1500955a]" name="setUp" is-config="true" duration-ms="4" started-at="2022-04-06T18:47:24 KRAT" finished-at="2022-04-06T18:47:24 KRAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testAge1()[pri:0, instance:ParamTestNG@7ce6a65d]" name="testAge1" duration-ms="3" started-at="2022-04-06T18:17:26 KRAT" finished-at="2022-04-06T18:17:26 KRAT">
+        <test-method status="PASS" signature="testAge1()[pri:0, instance:ParamTestNG@1500955a]" name="testAge1" duration-ms="4" started-at="2022-04-06T18:47:24 KRAT" finished-at="2022-04-06T18:47:24 KRAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAge1 -->
-        <test-method status="PASS" signature="testAge2()[pri:0, instance:ParamTestNG@7ce6a65d]" name="testAge2" duration-ms="0" started-at="2022-04-06T18:17:26 KRAT" finished-at="2022-04-06T18:17:26 KRAT">
+        <test-method status="PASS" signature="testAge2()[pri:0, instance:ParamTestNG@1500955a]" name="testAge2" duration-ms="1" started-at="2022-04-06T18:47:24 KRAT" finished-at="2022-04-06T18:47:24 KRAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAge2 -->
-        <test-method status="PASS" signature="testEmptyCollection()[pri:0, instance:ParamTestNG@7ce6a65d]" name="testEmptyCollection" duration-ms="1" started-at="2022-04-06T18:17:26 KRAT" finished-at="2022-04-06T18:17:26 KRAT">
+        <test-method status="PASS" signature="testEmptyCollection()[pri:0, instance:ParamTestNG@1500955a]" name="testEmptyCollection" duration-ms="0" started-at="2022-04-06T18:47:24 KRAT" finished-at="2022-04-06T18:47:24 KRAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testEmptyCollection -->
-        <test-method status="PASS" signature="testNullPointerCollection()[pri:0, instance:ParamTestNG@7ce6a65d]" name="testNullPointerCollection" duration-ms="1" started-at="2022-04-06T18:17:26 KRAT" finished-at="2022-04-06T18:17:26 KRAT">
+        <test-method status="PASS" signature="testNullPointerCollection()[pri:0, instance:ParamTestNG@1500955a]" name="testNullPointerCollection" duration-ms="0" started-at="2022-04-06T18:47:24 KRAT" finished-at="2022-04-06T18:47:24 KRAT">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
-at ParamTestNG.testNullPointerCollection(ParamTestNG.java:59)
+at ParamTestNG.testNullPointerCollection(ParamTestNG.java:65)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -72,11 +72,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testNullPointerCollection -->
-        <test-method status="FAIL" signature="testStudentsDataCollection()[pri:1, instance:ParamTestNG@7ce6a65d]" name="testStudentsDataCollection" duration-ms="0" started-at="2022-04-06T18:17:26 KRAT" finished-at="2022-04-06T18:17:26 KRAT">
+        <test-method status="FAIL" signature="testStudentsDataCollection()[pri:1, instance:ParamTestNG@1500955a]" name="testStudentsDataCollection" duration-ms="0" started-at="2022-04-06T18:47:24 KRAT" finished-at="2022-04-06T18:47:24 KRAT">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
-at ParamTestNG.testStudentsDataCollection(ParamTestNG.java:44)
+at ParamTestNG.testStudentsDataCollection(ParamTestNG.java:50)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -111,13 +111,13 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testStudentsDataCollection -->
-        <test-method status="SKIP" signature="testIsNotEmptyCollection()[pri:2, instance:ParamTestNG@7ce6a65d]" name="testIsNotEmptyCollection" duration-ms="0" started-at="2022-04-06T18:17:26 KRAT" depends-on-methods="ParamTestNG.testStudentsDataCollection" finished-at="2022-04-06T18:17:26 KRAT">
+        <test-method status="SKIP" signature="testIsNotEmptyCollection()[pri:2, instance:ParamTestNG@1500955a]" name="testIsNotEmptyCollection" duration-ms="0" started-at="2022-04-06T18:47:24 KRAT" depends-on-methods="ParamTestNG.testStudentsDataCollection" finished-at="2022-04-06T18:47:24 KRAT">
           <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Method ParamTestNG.testIsNotEmptyCollection()[pri:2, instance:ParamTestNG@7ce6a65d] depends on not successfully finished methods]]>
+              <![CDATA[Method ParamTestNG.testIsNotEmptyCollection()[pri:2, instance:ParamTestNG@1500955a] depends on not successfully finished methods]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method ParamTestNG.testIsNotEmptyCollection()[pri:2, instance:ParamTestNG@7ce6a65d] depends on not successfully finished methods
+              <![CDATA[java.lang.Throwable: Method ParamTestNG.testIsNotEmptyCollection()[pri:2, instance:ParamTestNG@1500955a] depends on not successfully finished methods
 at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
@@ -143,6 +143,43 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testIsNotEmptyCollection -->
+        <test-method status="FAIL" signature="teamDown()[pri:0, instance:ParamTestNG@1500955a]" name="teamDown" is-config="true" duration-ms="0" started-at="2022-04-06T18:47:24 KRAT" finished-at="2022-04-06T18:47:24 KRAT">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at ParamTestNG.teamDown(ParamTestNG.java:20)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:217)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:130)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teamDown -->
       </class> <!-- ParamTestNG -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

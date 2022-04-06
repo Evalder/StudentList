@@ -6,6 +6,7 @@
       <class name="ParamTestNG">
         <methods>
           <include name="testStudentsDataCollection"/>
+          <include name="teamDown"/>
           <include name="setUp"/>
           <include name="testIsNotEmptyCollection"/>
         </methods>

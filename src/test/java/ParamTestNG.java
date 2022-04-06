@@ -1,5 +1,6 @@
-import java.util.ArrayList;
+import static org.testng.Assert.assertEquals;
 
+import java.util.ArrayList;
 import org.testng.AssertJUnit;
 import org.testng.annotations.*;
 
@@ -12,6 +13,12 @@ public class ParamTestNG {
 @BeforeClass()
 public void setUp() {
 	arr = new ArrayList<Student>();
+}
+
+/* Clear data from collection */
+@AfterClass()
+public void teamDown() {
+	arr.clear();
 }
 
 /* Simple age test 1 */
@@ -59,5 +66,32 @@ public void testNullPointerCollection() {
 	int size = arr.size();
 }
 
+/* Data provider tests*/
+@Test
+@Parameters({"a", "fn", "sn"})
+public void params(@Optional("0")int a, @Optional("null")String fn, @Optional("null")String sn) {
+	Student st = new Student();
+	st.setAge(a);
+	st.setFirstName(fn);
+	st.setSecondName(sn);
+	assertEquals("Andrew", st.getFirstName());
+}
+
+@DataProvider(name = "Data")
+public static Object[][] getData()	{
+return new Object[][] {
+	{"Boris", "Boris"},
+	{"Sergey", "Sergey"},
+	{"Mihail", "Mihail"},
+};
+}
+
+@Test(dataProvider="Data")
+void testNames(String input, String expectedName) {
+Student t = new Student();
+t.setFirstName(input);
+String actual = t.getFirstName();
+AssertJUnit.assertEquals(expectedName, actual);
+}
 
 }
