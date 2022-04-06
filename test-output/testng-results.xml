@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="32" started-at="2022-04-06T18:12:51 KRAT" finished-at="2022-04-06T18:12:51 KRAT">
+    <groups>
+      <group name="SimpleTest">
+        <method signature="ParamTestNG.testAge1()[pri:0, instance:ParamTestNG@7a9273a8]" name="testAge1" class="ParamTestNG"/>
+        <method signature="ParamTestNG.testAge2()[pri:0, instance:ParamTestNG@7a9273a8]" name="testAge2" class="ParamTestNG"/>
+      </group> <!-- SimpleTest -->
+      <group name="TestCollection">
+        <method signature="ParamTestNG.testEmptyCollection()[pri:0, instance:ParamTestNG@7a9273a8]" name="testEmptyCollection" class="ParamTestNG"/>
+        <method signature="ParamTestNG.testStudentsDataCollection()[pri:1, instance:ParamTestNG@7a9273a8]" name="testStudentsDataCollection" class="ParamTestNG"/>
+      </group> <!-- TestCollection -->
+    </groups>
+    <test name="Default test" duration-ms="32" started-at="2022-04-06T18:12:51 KRAT" finished-at="2022-04-06T18:12:51 KRAT">
+      <class name="ParamTestNG">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:ParamTestNG@7a9273a8]" name="setUp" is-config="true" duration-ms="4" started-at="2022-04-06T18:12:51 KRAT" finished-at="2022-04-06T18:12:51 KRAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testAge1()[pri:0, instance:ParamTestNG@7a9273a8]" name="testAge1" duration-ms="4" started-at="2022-04-06T18:12:51 KRAT" finished-at="2022-04-06T18:12:51 KRAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAge1 -->
+        <test-method status="PASS" signature="testAge2()[pri:0, instance:ParamTestNG@7a9273a8]" name="testAge2" duration-ms="1" started-at="2022-04-06T18:12:51 KRAT" finished-at="2022-04-06T18:12:51 KRAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAge2 -->
+        <test-method status="PASS" signature="testEmptyCollection()[pri:0, instance:ParamTestNG@7a9273a8]" name="testEmptyCollection" duration-ms="0" started-at="2022-04-06T18:12:51 KRAT" finished-at="2022-04-06T18:12:51 KRAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEmptyCollection -->
+        <test-method status="PASS" signature="testStudentsDataCollection()[pri:1, instance:ParamTestNG@7a9273a8]" name="testStudentsDataCollection" duration-ms="1" started-at="2022-04-06T18:12:51 KRAT" finished-at="2022-04-06T18:12:51 KRAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStudentsDataCollection -->
+      </class> <!-- ParamTestNG -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

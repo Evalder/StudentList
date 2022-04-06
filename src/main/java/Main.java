@@ -3,65 +3,65 @@ import java.util.ArrayList;
 public class Main {
 
 	public static void main(String[] args) {
-		String firstName, secondName;		/* Буферные переменные */
+		String firstName, secondName;		/*  */
 		int age, userInput, min, max, avg;
 		
-		/* Создание коллекции для объектов класса Student */
+		/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ Student */
 		ArrayList<Student> studList = new ArrayList<Student>();
 		
-		/* Создание экземпляра класса Student */
+		/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ Student */
 		Student stud = new Student();
-		stud = new Student("Иван", "Петров", 20);
+		stud = new Student("Egor", "Semenov", 20);
 		studList.add(stud);
-		stud = new Student("Семён", "Никитин", 22);
+		stud = new Student("Andrey", "Nikitin", 22);
 		studList.add(stud);
 		
 		do {
-			System.out.println("\nВыберите действие: \n1 - Добавить студента. \n2 - Показать всех студентов. \n3 - Определить min, max и avg возраст. \n4 - Сгенерировать тестовые данные по студентам. \n5 - Выйти из программы.");
+			System.out.println("\nChoose an option: \n1 - Add a student. \n2 - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. \n3 - Calculate min, max and avg age. \n4 - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. \n5 - Exit.");
 			userInput = Methods.UserInputScanner();
 			
 			switch (userInput) {
 				case 1:
-					/* Запрос данных от пользователя */
-					System.out.println("\nВведите имя: ");
+					/* Adding new student data */
+					System.out.println("\nEnter name: ");
 					firstName = Methods.StrScanner();
-					System.out.println("Введите фамилию: ");
+					System.out.println("Enter surname: ");
 					secondName = Methods.StrScanner();		
-					System.out.println("Введите возраст: ");
+					System.out.println("Enter age: ");
 					age = Methods.IntScanner();
 					
-					/* Создание экземпляра класса Student */
+					/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ Student */
 					stud = new Student(firstName, secondName, age);
 					
-					/* Наполнение коллекции данными студентов с переменной типа Student */
+					/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ Student */
 					studList.add(stud);
 					break;
 				case 2:
-					/* Печать списка студентов */
+					/* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 					if (studList.size() < 1) {
-						System.out.println("Отсутствуют данные по студентам");
+						System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
 						break;
 					}
 
-					System.out.println("Имя" + "\t" + "Фамилия" + "\t" + "Возраст");
+					System.out.println("пїЅпїЅпїЅ" + "\t" + "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ" + "\t" + "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
 					for (Student temp : studList) {
 					    System.out.println(temp.firstName + "\t" + temp.secondName + "\t" + temp.age);
 					}
 					break;
 				case 3:
-					/* Определеие min, max, avg возраста */
+					/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ min, max, avg пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 					Methods.AgeActions(studList);
 					break;
 				case 4:	
-					/* Генерация тестовых данных */
-					/* Создание экземпляра класса Student */
-					stud = new Student("Егор", "Михайлов", 20);
+					/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
+					/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ Student */
+					stud = new Student("пїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", 20);
 					studList.add(stud);
-					stud = new Student("Антон", "Артёмов", 22);
+					stud = new Student("пїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ", 22);
 					studList.add(stud);
 					break;
 				case 5:
-					/* Закрыть программу */
+					/* Exiting */
 					System.exit(0);
 					
 			}

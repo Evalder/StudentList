@@ -5,11 +5,11 @@ public class Methods {
 	
 	static Scanner Scan = new Scanner(System.in);
 	
-	/* Метод для запроса числовых данных */
+	/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
 	public static int IntScanner() {
 		int Z;
 		do {
-			System.out.println("Введите целое число в интервале от 18 до 50 включительно: ");
+			System.out.println("Enter an age from 18 to 50: ");
 			Z = Scan.nextInt();
 				if ((Z < 18) || (Z > 50)) {
 				Z = 18;
@@ -18,7 +18,7 @@ public class Methods {
 		return(Z);
 		}
 	
-	/* Метод для запроса текстовых данных */
+	/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
 	public static String StrScanner() {
 		String Z;
 		do {
@@ -39,57 +39,57 @@ public class Methods {
 		return(Z);
 		}
 	
-	/* Метод для запуска определённого сценария программы */
+	/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 	public static int UserInputScanner() {
 		int Z;
 		do {
 			Z = Scan.nextInt();
 				if ((Z < 1) || (Z > 5)) {
-				System.out.println("Неверное значение, введите 1, 2, 3, 4, 5");
+				System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ 1, 2, 3, 4, 5");
 				}	
 	    } while ((Z < 1) || (Z > 4));
 		return(Z);
 		}
 	
-	/* Метод для определения min, max возраста */
+	/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ min, max пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 	public static void AgeActions(ArrayList<Student> studList) {
 		int min = 0, max = 0, avg = 0;
 		if (studList.size() < 1) {
-			System.out.println("Отсутствуют данные по студентам");
+			System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
 			return;
 		}
 		min = studList.get(0).age;
 		for (int i = 1; i < studList.size(); i++) {
 			if (studList.get(i).age < min) {
-				min = studList.get(i).age;	/* Доступ к i-тому элементу */
+				min = studList.get(i).age;	/* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ i-пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 			}
 		}
 		max = studList.get(0).age;
 		for (int i = 1; i < studList.size(); i++) {
 			if (studList.get(i).age > max) {
-				max = studList.get(i).age;	/* Доступ к i-тому элементу */
+				max = studList.get(i).age;	/* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ i-пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 			}
 		}
 		avg = studList.get(0).age;
 		for (int i = 1; i < studList.size(); i++) {
-			avg += studList.get(i).age;		/* Добавляет значение к самой переменной */
+			avg += studList.get(i).age;		/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 			}
-		avg /= studList.size();				/* Делим значение переменной */
-		System.out.println("Минимальный возраст: " + min + "\nМаксимальный возраст: " + max);
+		avg /= studList.size();				/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+		System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ: " + min + "\nпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ: " + max);
 		}
 	
-	/* Метод для определения avg возраста */
+	/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ avg пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 	public static int avgAge(ArrayList<Student> studList) {
 		int avg = 0;
 		if (studList.size() < 1) {
-			System.out.println("Отсутствуют данные по студентам");
+			System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
 			return 0;
 		}
 		avg = studList.get(0).age;
 		for (int i = 1; i < studList.size(); i++) {
-			avg += studList.get(i).age;		/* Добавляет значение к самой переменной */
+			avg += studList.get(i).age;		/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 			}
-		avg /= studList.size();				/* Делим значение переменной */
+		avg /= studList.size();				/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 		return avg;
 		}
 
