@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>NewTestNG.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">FactoryTestNG (08.04.2022 20:56:27)</a> &gt; <a href="../../index.html" class="el_group">StudentList</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">NewTestNG.java</span></div><h1>NewTestNG.java</h1><pre class="source lang-java linenums">import org.testng.annotations.*;
+
+<span class="nc" id="L3">public class NewTestNG {</span>
+	@Test()
+	public void test1 () {
+<span class="nc" id="L6">		System.out.println(&quot;test1&quot;);</span>
+<span class="nc" id="L7">	}</span>
+	
+	@Test()
+	public void test2 () {
+<span class="nc" id="L11">		System.out.println(&quot;test2&quot;);</span>
+<span class="nc" id="L12">	}</span>
+	
+	@BeforeMethod()
+	public void testBeforeMethod () {
+<span class="nc" id="L16">		System.out.println(&quot;BeforeMethod&quot;);</span>
+<span class="nc" id="L17">	}	</span>
+	
+	@AfterMethod()
+	public void testAfterMethod () {
+<span class="nc" id="L21">		System.out.println(&quot;AfterMethod&quot;);</span>
+<span class="nc" id="L22">	}	</span>
+	
+	@BeforeClass()
+	public void testBeforeClass () {
+<span class="nc" id="L26">		System.out.println(&quot;BeforeClass&quot;);</span>
+<span class="nc" id="L27">	}	</span>
+	
+	@AfterClass()
+	public void testAfterClass () {
+<span class="nc" id="L31">		System.out.println(&quot;AfterClass&quot;);</span>
+<span class="nc" id="L32">	}	</span>
+	
+	@BeforeTest()
+	public void testBeforeTest () {
+<span class="nc" id="L36">		System.out.println(&quot;BeforeTest&quot;);</span>
+<span class="nc" id="L37">	}	</span>
+	
+	@AfterSuite()
+	public void testAfterSuite () {
+<span class="nc" id="L41">		System.out.println(&quot;AfterSuite&quot;);</span>
+<span class="nc" id="L42">	}	</span>
+	
+	@BeforeSuite()
+	public void testBeforeSuite () {
+<span class="nc" id="L46">		System.out.println(&quot;BeforeSuite&quot;);</span>
+<span class="nc" id="L47">	}	</span>
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span>FactoryTestNG (08.04.2022 20:56:27)</div></body></html>

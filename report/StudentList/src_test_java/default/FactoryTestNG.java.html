@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>FactoryTestNG.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">FactoryTestNG (08.04.2022 20:56:27)</a> &gt; <a href="../../index.html" class="el_group">StudentList</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">FactoryTestNG.java</span></div><h1>FactoryTestNG.java</h1><pre class="source lang-java linenums">import java.util.ArrayList;
+
+import org.junit.Assert;
+import org.testng.AssertJUnit;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Factory;
+import org.testng.annotations.Test;
+
+<span class="fc" id="L9">public class FactoryTestNG {</span>
+
+<span class="fc" id="L11">Student s = new Student();</span>
+ArrayList &lt;Student&gt; arr;
+
+/* Simple age test 1 */
+@Test(groups= {&quot;SimpleTestAge&quot;})
+public void testAge1() {
+<span class="fc" id="L17">	int age = 44;</span>
+<span class="fc" id="L18">	s.setAge(age);</span>
+<span class="fc" id="L19">	int expectedAge = 44;</span>
+<span class="fc" id="L20">	AssertJUnit.assertEquals(expectedAge,s.getAge());</span>
+<span class="fc" id="L21">}</span>
+
+/* Simple firstName test 1 */
+@Test(groups= {&quot;SimpleTestFirstName&quot;})
+public void testFirstName1() {
+<span class="fc" id="L26">	String fname = &quot;Ivan&quot;;</span>
+<span class="fc" id="L27">	s.setFirstName(fname);</span>
+<span class="fc" id="L28">	String expectedFirstName = &quot;Ivan&quot;;</span>
+<span class="fc" id="L29">	AssertJUnit.assertEquals(expectedFirstName,s.getFirstName());</span>
+<span class="fc" id="L30">}</span>
+
+/* Simple secondName test 1 */
+@Test(groups= {&quot;SimpleTestSecondName&quot;})
+public void testSecondName1() {
+<span class="fc" id="L35">	String sname = &quot;Ivanov&quot;;</span>
+<span class="fc" id="L36">	s.setSecondName(sname);</span>
+<span class="fc" id="L37">	String expectedSecondName = &quot;Ivanov&quot;;</span>
+<span class="fc" id="L38">	AssertJUnit.assertEquals(expectedSecondName,s.getSecondName());</span>
+<span class="fc" id="L39">}</span>
+
+@Factory
+public Object[] TestFactory() {
+<span class="fc" id="L43">		return new Object [] {new FirstNameTest()};		</span>
+	}
+
+<span class="fc" id="L46">class FirstNameTest {</span>
+	
+	@DataProvider (name = &quot;firstNamesProvider&quot;, parallel=true)
+	public Object [][] firstNamesProvider () {
+<span class="fc" id="L50">		 return new Object[][] {</span>
+<span class="fc" id="L51">				 {&quot;Petr&quot;, new Student(&quot;Petr&quot;,&quot;Nikitin&quot;,28)},</span>
+<span class="fc" id="L52">				 {&quot;Igor&quot;, new Student(&quot;Igor&quot;,&quot;Smakotin&quot;,24)},</span>
+<span class="fc" id="L53">				 {&quot;Alina&quot;, new Student(&quot;Alina&quot;,&quot;Ivanova&quot;,23)},</span>
+<span class="fc" id="L54">				 {&quot;Elena&quot;, new Student(&quot;Elena&quot;,&quot;Markova&quot;,26)}</span>
+			};
+		}
+
+/* With parallel streams */	
+@Test (dataProvider = &quot;firstNamesProvider&quot;, threadPoolSize=4)
+public void firstName(String name, Student t) {
+<span class="fc" id="L61">	long id = Thread.currentThread().getId();</span>
+<span class="fc" id="L62">	System.out.println(&quot;thread=&quot; + id);</span>
+<span class="fc" id="L63">	Assert.assertEquals(name,t.getFirstName());</span>
+<span class="fc" id="L64">}</span>
+
+@DataProvider (name = &quot;secondNamesProvider&quot;, parallel=true)
+public Object [][] secondNamesProvider () {
+<span class="fc" id="L68">	 return new Object[][] {</span>
+<span class="fc" id="L69">			 {&quot;Nikitin&quot;, new Student(&quot;Petr&quot;,&quot;Nikitin&quot;,28)},</span>
+<span class="fc" id="L70">			 {&quot;Smakotin&quot;, new Student(&quot;Igor&quot;,&quot;Smakotin&quot;,24)},</span>
+<span class="fc" id="L71">			 {&quot;Ivanova&quot;, new Student(&quot;Alina&quot;,&quot;Ivanova&quot;,23)},</span>
+<span class="fc" id="L72">			 {&quot;Markova&quot;, new Student(&quot;Elena&quot;,&quot;Markova&quot;,26)}</span>
+		};
+	}
+
+/* With parallel streams */	
+@Test (dataProvider = &quot;secondNamesProvider&quot;, threadPoolSize=4)
+public void secondName(String sname, Student t) {
+<span class="fc" id="L79">	long id = Thread.currentThread().getId();</span>
+<span class="fc" id="L80">	System.out.println(&quot;thread=&quot; + id);</span>
+<span class="fc" id="L81">	Assert.assertEquals(sname,t.getSecondName());</span>
+<span class="fc" id="L82">}</span>
+
+@DataProvider (name = &quot;ageProvider&quot;, parallel=true)
+public Object [][] ageProvider () {
+<span class="fc" id="L86">	 return new Object[][] {</span>
+<span class="fc" id="L87">			 {28, new Student(&quot;Petr&quot;,&quot;Nikitin&quot;,28)},</span>
+<span class="fc" id="L88">			 {24, new Student(&quot;Igor&quot;,&quot;Smakotin&quot;,24)},</span>
+<span class="fc" id="L89">			 {23, new Student(&quot;Alina&quot;,&quot;Ivanova&quot;,23)},</span>
+<span class="fc" id="L90">			 {26, new Student(&quot;Elena&quot;,&quot;Markova&quot;,26)}</span>
+		};
+	}
+
+/* With parallel streams */	
+@Test (dataProvider = &quot;ageProvider&quot;, threadPoolSize=4)
+public void age(int age, Student t) {
+<span class="fc" id="L97">long id = Thread.currentThread().getId();</span>
+<span class="fc" id="L98">System.out.println(&quot;thread=&quot; + id);</span>
+<span class="fc" id="L99">Assert.assertEquals(age,t.getAge());</span>
+<span class="fc" id="L100">}</span>
+
+}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span>FactoryTestNG (08.04.2022 20:56:27)</div></body></html>

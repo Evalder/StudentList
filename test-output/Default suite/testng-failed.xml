@@ -5,7 +5,8 @@
     <classes>
       <class name="FactoryTestNG$FirstNameTest">
         <methods>
-          <include name="firstName" invocation-numbers="3"/>
+          <include name="secondName"/>
+          <include name="age"/>
         </methods>
       </class> <!-- FactoryTestNG$FirstNameTest -->
     </classes>

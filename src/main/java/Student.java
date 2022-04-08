@@ -3,7 +3,7 @@ public class Student {
 	String firstName, secondName;
 	int age;
 	
-	/* �������� ������������ ������ Student */
+	/* Class Student */
 	public Student(String firstName, String secondName, int age) {
 		this.firstName = firstName;
 		this.secondName = secondName;
@@ -40,7 +40,7 @@ public class Student {
 		this.age = age;
 	}
 	
-	/* �������� ������� ������������ ������ Student */
+	/* Default constructor of Class Student */
 	public Student() {
 		
 	}

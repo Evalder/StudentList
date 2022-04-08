@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>ParallelTestNG.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">FactoryTestNG (08.04.2022 20:56:27)</a> &gt; <a href="../../index.html" class="el_group">StudentList</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">ParallelTestNG.java</span></div><h1>ParallelTestNG.java</h1><pre class="source lang-java linenums">import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
+import org.junit.jupiter.api.Tag;
+
+@Execution(ExecutionMode.CONCURRENT)
+<span class="nc" id="L9">public class ParallelTestNG {</span>
+	/* ������ ��������� ������ Student */
+<span class="nc" id="L11">	private Student s = new Student();</span>
+	
+/* Checking age */
+@Test
+void StudentAgeCorrectCheck1() {
+<span class="nc" id="L16">	int age = 30;</span>
+<span class="nc" id="L17">	s.setAge(age);</span>
+<span class="nc" id="L18">	int expectedAge = 30;</span>
+<span class="nc" id="L19">	int actualsAge = s.getAge();</span>
+<span class="nc" id="L20">	long id = Thread.currentThread().getId();</span>
+<span class="nc" id="L21">	System.out.println(&quot;thread=&quot; + id);</span>
+<span class="nc" id="L22">	assertEquals(expectedAge, actualsAge);</span>
+<span class="nc" id="L23">}</span>
+	
+@Test
+void StudentAgeCorrectCheck2() {
+<span class="nc" id="L27">	int age = 32;</span>
+<span class="nc" id="L28">	s.setAge(age);</span>
+<span class="nc" id="L29">	int expectedAge = 32;</span>
+<span class="nc" id="L30">	int actualsAge = s.getAge();</span>
+<span class="nc" id="L31">	long id = Thread.currentThread().getId();</span>
+<span class="nc" id="L32">	System.out.println(&quot;thread=&quot; + id);</span>
+<span class="nc" id="L33">	assertEquals(expectedAge, actualsAge);</span>
+<span class="nc" id="L34">}	</span>
+
+@Test
+void StudentAgeCorrectCheck3() {
+<span class="nc" id="L38">	int age = 35;</span>
+<span class="nc" id="L39">	s.setAge(age);</span>
+<span class="nc" id="L40">	int expectedAge = 35;</span>
+<span class="nc" id="L41">	int actualsAge = s.getAge();</span>
+<span class="nc" id="L42">	long id = Thread.currentThread().getId();</span>
+<span class="nc" id="L43">	System.out.println(&quot;thread=&quot; + id);</span>
+<span class="nc" id="L44">	assertEquals(expectedAge, actualsAge);</span>
+<span class="nc" id="L45">}</span>
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span>FactoryTestNG (08.04.2022 20:56:27)</div></body></html>

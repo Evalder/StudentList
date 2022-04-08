@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>ParamTestNG.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">FactoryTestNG (08.04.2022 20:56:27)</a> &gt; <a href="../../index.html" class="el_group">StudentList</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">ParamTestNG.java</span></div><h1>ParamTestNG.java</h1><pre class="source lang-java linenums">import static org.testng.Assert.assertEquals;
+
+import java.util.ArrayList;
+import org.testng.AssertJUnit;
+import org.testng.annotations.*;
+
+<span class="nc" id="L7">public class ParamTestNG {</span>
+	
+<span class="nc" id="L9">	Student s = new Student();</span>
+	ArrayList &lt;Student&gt; arr;
+
+/* Initialization of collection */
+@BeforeClass()
+public void setUp() {
+<span class="nc" id="L15">	arr = new ArrayList&lt;Student&gt;();</span>
+<span class="nc" id="L16">}</span>
+
+/* Clear data from collection */
+@AfterClass()
+public void teamDown() {
+<span class="nc" id="L21">	arr.clear();</span>
+<span class="nc" id="L22">}</span>
+
+/* Simple age test 1 */
+@Test(groups= {&quot;SimpleTest&quot;})
+ public void testAge1() {
+<span class="nc" id="L27">	int age = 44;</span>
+<span class="nc" id="L28">	s.setAge(age);</span>
+<span class="nc" id="L29">	int expectedAge = 44;</span>
+<span class="nc" id="L30">	AssertJUnit.assertEquals(expectedAge,s.getAge());</span>
+<span class="nc" id="L31">}</span>
+
+/* Simple age test 2 */
+@Test(groups = {&quot;SimpleTest&quot;})
+public void testAge2() {
+<span class="nc" id="L36">	int age = 23;</span>
+<span class="nc" id="L37">	s.setAge(age);</span>
+<span class="nc" id="L38">	int expectedAge = 23;</span>
+<span class="nc" id="L39">	AssertJUnit.assertEquals(expectedAge,s.getAge());</span>
+<span class="nc" id="L40">}</span>
+
+/* Test array with student's data is empty */
+@Test(priority = 0, groups = {&quot;TestCollection&quot;})
+public void testEmptyCollection() {
+<span class="nc" id="L45">	AssertJUnit.assertTrue(arr.isEmpty());</span>
+<span class="nc" id="L46">}</span>
+
+/* Test number of students in array */
+@Test(priority = 1, groups = {&quot;TestCollection&quot;})
+public void testStudentsDataCollection() {
+<span class="nc" id="L51">	int k = arr.size();</span>
+<span class="nc" id="L52">	arr.add(new Student(&quot;Andrew&quot;, &quot;Ziborov&quot;, 25));</span>
+<span class="nc" id="L53">	AssertJUnit.assertEquals(k+1,arr.size());</span>
+<span class="nc" id="L54">}</span>
+
+/* Test array with student's data is not empty */
+@Test(priority = 2, groups = {&quot;TestCollection&quot;}, dependsOnMethods = {&quot;testStudentsDataCollection&quot;})
+public void testIsNotEmptyCollection() {
+<span class="nc" id="L59">	AssertJUnit.assertFalse(arr.isEmpty());</span>
+<span class="nc" id="L60">}</span>
+
+/* Test array nullpointer exception */
+@Test(priority = 0, groups = {&quot;TestCollection&quot;}, expectedExceptions = {NullPointerException.class})
+public void testNullPointerCollection() {
+<span class="nc" id="L65">	arr = null;</span>
+<span class="nc" id="L66">	int size = arr.size();</span>
+<span class="nc" id="L67">}</span>
+
+/* Data provider tests*/
+@Test
+@Parameters({&quot;a&quot;, &quot;fn&quot;, &quot;sn&quot;})
+public void params(@Optional(&quot;0&quot;)int a, @Optional(&quot;null&quot;)String fn, @Optional(&quot;null&quot;)String sn) {
+<span class="nc" id="L73">	Student st = new Student();</span>
+<span class="nc" id="L74">	st.setAge(a);</span>
+<span class="nc" id="L75">	st.setFirstName(fn);</span>
+<span class="nc" id="L76">	st.setSecondName(sn);</span>
+<span class="nc" id="L77">	assertEquals(&quot;Andrew&quot;, st.getFirstName());</span>
+<span class="nc" id="L78">}</span>
+
+@DataProvider(name = &quot;Data&quot;)
+public static Object[][] getData()	{
+<span class="nc" id="L82">return new Object[][] {</span>
+<span class="nc" id="L83">	{&quot;Boris&quot;, &quot;Boris&quot;},</span>
+<span class="nc" id="L84">	{&quot;Sergey&quot;, &quot;Sergey&quot;},</span>
+<span class="nc" id="L85">	{&quot;Mihail&quot;, &quot;Mihail&quot;},</span>
+};
+}
+
+@Test(dataProvider=&quot;Data&quot;)
+void testNames(String input, String expectedName) {
+<span class="nc" id="L91">Student t = new Student();</span>
+<span class="nc" id="L92">t.setFirstName(input);</span>
+<span class="nc" id="L93">String actual = t.getFirstName();</span>
+<span class="nc" id="L94">AssertJUnit.assertEquals(expectedName, actual);</span>
+<span class="nc" id="L95">}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span>FactoryTestNG (08.04.2022 20:56:27)</div></body></html>

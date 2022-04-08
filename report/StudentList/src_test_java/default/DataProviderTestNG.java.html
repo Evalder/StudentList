@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>DataProviderTestNG.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">FactoryTestNG (08.04.2022 20:56:27)</a> &gt; <a href="../../index.html" class="el_group">StudentList</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">DataProviderTestNG.java</span></div><h1>DataProviderTestNG.java</h1><pre class="source lang-java linenums">import org.junit.Assert;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Factory;
+import org.testng.annotations.Test;
+
+public class DataProviderTestNG {
+
+@DataProvider (name = &quot;StudentsData&quot;)
+	public static Object [] firstNamesProvider () {
+<span class="nc" id="L10">		return new Object[] {</span>
+<span class="nc" id="L11">			new Student(&quot;Petr&quot;,&quot;Nikitin&quot;,28),</span>
+<span class="nc" id="L12">			new Student(&quot;Igor&quot;,&quot;Smakotin&quot;,24),</span>
+<span class="nc" id="L13">			new Student(&quot;Alina&quot;,&quot;Semenova&quot;,25)</span>
+			};
+		}
+
+@DataProvider (name = &quot;StudentsAge&quot;)
+public Object [][] ageProvider () {
+<span class="nc" id="L19">	 return new Object[][] {</span>
+<span class="nc" id="L20">			 {(28), new Student(&quot;Petr&quot;,&quot;Nikitin&quot;,28)},</span>
+<span class="nc" id="L21">			 {(24), new Student(&quot;Igor&quot;,&quot;Smakotin&quot;,24)},</span>
+<span class="nc" id="L22">			 {(25),new Student(&quot;Alina&quot;,&quot;Semenova&quot;,25)}</span>
+		};
+	}
+
+	private Student u;
+	private int age;
+
+	@Factory(dataProvider = &quot;StudentsData&quot;)
+<span class="nc" id="L30">	public DataProviderTestNG(Student u) {</span>
+<span class="nc" id="L31">		this.u = u;</span>
+<span class="nc" id="L32">		age = u.getAge();</span>
+<span class="nc" id="L33">	}</span>
+
+	@Test (dataProvider = &quot;StudentsData&quot;)
+	public void firstName() {
+<span class="nc" id="L37">		Assert.assertNotNull(u.getFirstName());</span>
+<span class="nc" id="L38">	}</span>
+	
+	@Test (dataProvider = &quot;StudentsData&quot;)
+	public void age() {
+<span class="nc" id="L42">		Assert.assertEquals(age, u.getAge());</span>
+<span class="nc" id="L43">	}</span>
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span>FactoryTestNG (08.04.2022 20:56:27)</div></body></html>
