@@ -3,13 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="DataProviderTestNG">
+      <class name="FactoryTestNG$FirstNameTest">
         <methods>
-          <include name="age"/>
-          <include name="age"/>
-          <include name="age"/>
+          <include name="firstName" invocation-numbers="3"/>
         </methods>
-      </class> <!-- DataProviderTestNG -->
+      </class> <!-- FactoryTestNG$FirstNameTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -3,44 +3,44 @@ public class Student {
 	String firstName, secondName;
 	int age;
 	
-	/* Создание конструктора класса Student */
+	/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ Student */
 	public Student(String firstName, String secondName, int age) {
 		this.firstName = firstName;
 		this.secondName = secondName;
 		this.age = age;
 	}
 	
-	/* свойство возвращения firstName */
+	/* Getting firstName */
 	public String getFirstName() {
 		return firstName;
 	}
 
-	/* свойство задания firstName */
+	/* Setting firstName */
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 	
-	/* свойство возвращения secondName */
+	/* Getting secondName */
 	public String getSecondName() {
 		return secondName;
 	}
 
-	/* свойство задания secondName */
+	/* Setting secondName */
 	public void setSecondName(String secondName) {
 		this.secondName = secondName;
 	}	
 	
-	/* свойство возвращения age */
+	/* Getting age */
 	public int getAge() {
 		return age;
 	}
 
-	/* свойство задания age */
+	/* Setting age */
 	public void setAge(int age) {
 		this.age = age;
 	}
 	
-	/* Создание пустого конструктора класса Student */
+	/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ Student */
 	public Student() {
 		
 	}

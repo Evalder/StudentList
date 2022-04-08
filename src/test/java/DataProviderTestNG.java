@@ -32,7 +32,7 @@ public Object [][] ageProvider () {
 		age = u.getAge();
 	}
 
-	@Test ()
+	@Test (dataProvider = "StudentsData")
 	public void firstName() {
 		Assert.assertNotNull(u.getFirstName());
 	}
